@@ -259,7 +259,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <main class="content" id="quarto-document-content">
 
-<p class="writing-back-link"><a href="../writing.html"><i class="bi bi-arrow-left"></i> Back to the writing page</a></p>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -296,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Monitoring is a critical part of environmental management, and open-source Earth observation (EO) data has made it more accessible than ever. Anyone can pull up a satellite image of almost anywhere on the planet, going back years. The problem is what happens after that: the sheer volume of data makes storage, processing, and analysis genuinely hard to do well, especially if you want to do it more than once. I built a pipeline that automates that process: ingesting new imagery, tracking environmental indicators over time, and forecasting where conditions are headed, for any area of interest, without ever downloading a satellite tile.</p>
 <p>I will use the case of Atamah, Syria to demonstrate the process. It is a small town in northwest Syria, directly on the Turkish border. We have two Sentinel-2 captures of the same area, eight years apart. The imagery alone shows the change: farmland loss is most visible on the Turkish side, and the waterbody has shrunk noticeably. Atamah and the nearby town of Al-Danah have also grown visibly over the same period, reflecting an influx of refugees that has put pressure on the surrounding land.</p>
 <p>That kind of change is exactly what environmental monitoring is meant to catch, but catching it well means answering a harder question than “can I download a satellite image.” It means building a system that keeps answering that question, automatically, efficiently, and indefinitely.</p>
-<p><img src="./images/northeast_syria_2017_2025.png" alt="Sentinel-2 imagery of the same Atamah, Syria area, August 2017 vs August 2025" width="900"></p>
+<p><img src="./images/northwest_syria_2017_2025.png" alt="Sentinel-2 imagery of the same Atamah, Syria area, August 2017 vs August 2025" width="900"></p>
 <p><em>Northwest Syria border area with Turkey near the Atamah refugee camp: August 2017 vs August 2025 — Credit: Sentinel-2</em></p>
 <p>This kind of system is meant for environmental scientists, NGOs, and government agencies tracking land cover, vegetation health, water bodies, and other environmental indicators over time. By automatically ingesting new imagery, processing it, and generating forecasts, the pipeline gives stakeholders timely information to support decisions about conservation, resource management, and policy. A government agency supporting farmers across a large region, for example, could use ongoing monitoring to compare conditions across areas and prioritize where support is most needed. If vegetation or moisture conditions are expected to deteriorate over the next several weeks, knowing that in advance could help direct resources before the deterioration becomes severe.</p>
 <p>In this context, the forecast is not the decision itself. It is an additional signal that can feed into a larger resource-allocation, risk-assessment, or early-warning process. And by building it as an extensible pipeline, new areas of interest and spectral indices can be added as needed, without having to re-engineer the whole system.</p>
@@ -442,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>The bigger lessons ended up being less about the modeling and more about the MLOps around it: what is the most efficient way to handle such large volume of data, what happens when there is no new data available for an AOI, what a poor forecast run actually looks like in the metrics before it reaches a user, and how much upkeep it takes to keep AOI information current as new areas get added. None of that shows up in a single slide about model architecture, but it’s most of what maintaining an operational ML pipeline actually involves.</p>
 <p>Ongoing maintenance, more documentation and tests, and the inevitable bugs are part of the plan, not an afterthought. If there is an area you would like to see added to the monitor, feel free to open an issue on the <a href="https://github.com/astroAycha/environment_monitor">GitHub repository</a>, and if you want to contribute, please do! The code is open-source and contributions are welcome.</p>
-<p>Acknowledgments: This project was completed as part of the COGS GIS-Remote Sensing graduate certificate program.</p>
+<p><em>Acknowledgments: This project was completed as part of the COGS GIS-Remote Sensing graduate certificate program.</em></p>
 <hr>
 <p><strong>Links:</strong></p>
 <ul>
